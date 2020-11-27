@@ -24,15 +24,15 @@ export default class App {
     calcularSalario(tipoTrabajador, horasTrabajadas) {
         let result;
 
-        switch(tipoTrabajador, horasTrabajadas) {
+        switch(tipoTrabajador) {
             case 'tipo1':
-                result = 20 * horasTrabajadas
+                result = 20 * horasTrabajadas;
             break;
             case 'tipo2':
-                result = 22 * horasTrabajadas
+                result = 22 * horasTrabajadas;
             break;
             case 'tipo3':
-                result = 25 * horasTrabajadas
+                result = 25 * horasTrabajadas;
             break;
             default:
             result = -1
@@ -258,4 +258,4 @@ console.log(app.costoBoletos(5, 'zona3'))
 
 console.log('implementando estaEnRango(-)')
 console.log(app.estaEnRango(1, 100, 56));
-console.log(app.estaEnRango(20, 30, 78))
+console.log(app.estaEnRango(20, 30, 78));
