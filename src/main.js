@@ -184,7 +184,15 @@ export default class App {
     }
 
     estaEnRango(limiteInicial, limiteFinal, numero) {
-        
+        let mensaje;
+
+        if (numero >= limiteInicial && numero <= limiteFinal) {
+            mensaje = true 
+        } else {
+            mensaje = false
+        }
+
+        return mensaje;
     }
 
 
@@ -201,7 +209,7 @@ console.log('implementando esMultiplo(#)')
 console.log(app.esMultiplo(27, 3));
 console.log(app.esMultiplo(43, 3));
 
-console.log('implementando calcularSalario(°)')
+console.log('implementando calcularSalario(-)')
 console.log(app.calcularSalario('tipo1', 8));
 console.log(app.calcularSalario('tipo2', 6));
 console.log(app.calcularSalario('tipo3', 7));
@@ -230,7 +238,7 @@ console.log(app.calcular(12, 20, '/'));
 console.log(app.calcular(12, 20, '%'));
 console.log(app.calcular(12, 20, ':'));
 
-console.log('implementando costoRenta()')
+console.log('implementando costoRenta(-)')
 console.log(app.costoRenta(9, 1));
 console.log(app.costoRenta(21, 2));
 console.log(app.costoRenta(13, 3));
@@ -240,7 +248,7 @@ console.log(app.costoRenta(32, 6));
 console.log(app.costoRenta(24, 7));
 console.log(app.costoRenta(19, 8));
 
-console.log('implementando costoBoleto()')
+console.log('implementando costoBoleto(-)')
 console.log(app.costoBoletos(4, 'zona1'))
 console.log(app.costoBoletos(8, 'zona1'))
 console.log(app.costoBoletos(3, 'zona2'))
@@ -248,4 +256,6 @@ console.log(app.costoBoletos(6, 'zona2'))
 console.log(app.costoBoletos(1, 'zona3'))
 console.log(app.costoBoletos(5, 'zona3'))
 
-console.log('implementando estaEnRango()')
+console.log('implementando estaEnRango(-)')
+console.log(app.estaEnRango(1, 100, 56));
+console.log(app.estaEnRango(20, 30, 78))
