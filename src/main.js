@@ -24,14 +24,18 @@ export default class App {
     calcularSalario(tipoTrabajador, horasTrabajadas) {
         let result;
 
+        let tipo1 = 20
+        let tipo2 = 22
+        let tipo3 = 25
+
         switch(tipoTrabajador) {
-            case 'tipo1':
+            case 1:
                 result = 20 * horasTrabajadas;
             break;
-            case 'tipo2':
+            case 2:
                 result = 22 * horasTrabajadas;
             break;
-            case 'tipo3':
+            case 3:
                 result = 25 * horasTrabajadas;
             break;
             default:
@@ -61,14 +65,14 @@ export default class App {
     
 
     obtenerCercano100(numero1, numero2, numero3) {
-        if(numero1 !== numero2 && numero1 !== numero3) { // !== para comprobar si son distintos 
+         // !== para comprobar si son distintos 
             let x = Math.abs(numero1 - 100)
             let y = Math.abs(numero2 - 100)
             let z = Math.abs(numero3 - 100)
 
             if (y < x && y < z) { 
                 return numero2;
-            }
+            } 
 
             if (x < y && x < z) {
                 return numero1;
@@ -76,13 +80,11 @@ export default class App {
 
             if (z < x && z < y) {
                 return numero3;
+            } else {
+                return null;
             }
-
-            return null;
-    } else {
-        return null;
-    }
-    }
+        
+        }
 
     calcular(numero1, numero2, operador) {
         let resultado;
@@ -112,42 +114,21 @@ export default class App {
     costoRenta(pelicula, dia) {
         let resultado;
 
-        switch(pelicula, dia) {
+        switch(dia) {
             case 1:
-                
-            /*switch(pelicula){
-                    case (pelicula % 3 === 0):
-                        resultado = ((pelicula / 3 * 60) * 25);
-                        break;
-                    case (pelicula % 3 === 1):
-                        resultado = ((pelicula / 3 * 60) * 25) + 25;
-                        break;
-                    case (pelicula % 3 === 2):
-                        resultado = ((pelicula / 3 * 60) * 25) + 50;
-                        break;*/
-                 
+                resultado = (pelicula % 3 === 0) == ((pelicula / 3 * 60) * 25) || (pelicula % 3 === 1) == ((pelicula / 3 * 60) * 25) + 25 || (pelicula % 3 === 2) == ((pelicula / 3 * 60) * 25) + 50  
             break;
             case 2:
-                resultado = (pelicula % 2 === 0) == Math.abs(pelicula / 2 * 25) || (pelicula % 2 === 1) == Math.abs(pelicula / 2 * 25) + 25
+                resultado = (pelicula % 2 === 0) == (pelicula / 2 * 25) || (pelicula % 2 === 1) == (pelicula / 2 * 25) + 25
             break;
             case 3:
                 resultado = (pelicula * 25) - (pelicula * 25 * 0.15);
             break;
             case 4:
-                resultado = Math.abs(pelicula % 2 === 0 * 25) || Math.abs(pelicula % 2 === 1 * 25) + 25
+                resultado = (pelicula % 2 === 0 * 25) || (pelicula % 2 === 1 * 25) + 25
             break;
             case 5:
-                switch(pelicula){
-                    case (pelicula % 3 === 0):
-                        resultado = ((pelicula / 3 * 60) * 25);
-                        break;
-                    case (pelicula % 3 === 1):
-                        resultado = ((pelicula / 3 * 60) * 25) + 25;
-                        break;
-                    case (pelicula % 3 === 2):
-                        resultado = ((pelicula / 3 * 60) * 25) + 50;
-                        break;
-                } 
+                resultado = (pelicula % 3 === 0) == ((pelicula / 3 * 60) * 25) || (pelicula % 3 === 1) == ((pelicula / 3 * 60) * 25) + 25 || (pelicula % 3 === 2) == ((pelicula / 3 * 60) * 25) + 50
             break;
             case 6:
                 resultado = pelicula * 25;
@@ -163,23 +144,28 @@ export default class App {
 
     costoBoletos(boletos, zona) {
         let result;
-        let zona1 = 300 
-        let zona2 = 450 
-        let zona3 = 700 
-
-        switch (boletos, zona1, zona2, zona3) {
-            case zona1:
-                result = 300 * boletos && result >= 2000 - (result * 0.07)
-                break;
-            case zona2:
-                result = 450 * boletos && result >= 2000 - (result * 0.07)
-                break;
-            case zona3:
-                result = 700 * boletos && result >= 2000 - (result * 0.07)
-                break;
-                default: 
+        if (1, 2, 3) {
+            if(1) {
+                result = boletos * 300 ; 
+            } else if (boletos * 300 >= 2000) {
+                result = (boletos * 300) - (boletos * 450 * 0.07);
+            }  
+    
+            if(2) {
+                result = boletos * 450; 
+            } else if (boletos * 450 >= 2000) {
+                result = (boletos * 450) - (boletos * 450 * 0.07);
+            } 
+    
+            if(3) {
+                result = boletos * 700;
+            } else if (boletos * 700 >= 2000) {
+                result = (boletos * 700) - (boletos * 700 * 0.07);
+            } else {
                 result = -1
+            }
         }
+        
         return result;
     }
 
@@ -200,28 +186,28 @@ export default class App {
 
 let app = new App();
 
-console.log('implementando esPar(#)')
+console.log('implementando esPar(#)');
 console.log(app.esPar(0));
 console.log(app.esPar(5));
 console.log(app.esPar(6));
 
-console.log('implementando esMultiplo(#)')
+console.log('implementando esMultiplo(#)');
 console.log(app.esMultiplo(27, 3));
 console.log(app.esMultiplo(43, 3));
 
-console.log('implementando calcularSalario(-)')
-console.log(app.calcularSalario('tipo1', 8));
-console.log(app.calcularSalario('tipo2', 6));
-console.log(app.calcularSalario('tipo3', 7));
+console.log('implementando calcularSalario(#)');
+console.log(app.calcularSalario(1, 8));
+console.log(app.calcularSalario(2, 6));
+console.log(app.calcularSalario(3, 7));
 
-console.log('implementando obtenerCalificacion(#)')
+console.log('implementando obtenerCalificacion(#)');
 console.log(app.obtenerCalificacion(3));
 console.log(app.obtenerCalificacion(7));
 console.log(app.obtenerCalificacion(9));
 console.log(app.obtenerCalificacion(10));
 console.log(app.obtenerCalificacion(13));
 
-console.log('implementando obtenerCercano100(-)')
+console.log('implementando obtenerCercano100(#)');
 console.log(app.obtenerCercano100(60, 34, 78));
 console.log(app.obtenerCercano100(50, 99, 73));
 console.log(app.obtenerCercano100(123, 54, 68));
@@ -238,7 +224,7 @@ console.log(app.calcular(12, 20, '/'));
 console.log(app.calcular(12, 20, '%'));
 console.log(app.calcular(12, 20, ':'));
 
-console.log('implementando costoRenta(-)')
+console.log('implementando costoRenta(-)');
 console.log(app.costoRenta(9, 1));
 console.log(app.costoRenta(21, 2));
 console.log(app.costoRenta(13, 3));
@@ -248,14 +234,16 @@ console.log(app.costoRenta(32, 6));
 console.log(app.costoRenta(24, 7));
 console.log(app.costoRenta(19, 8));
 
-console.log('implementando costoBoleto(-)')
-console.log(app.costoBoletos(4, 'zona1'))
-console.log(app.costoBoletos(8, 'zona1'))
-console.log(app.costoBoletos(3, 'zona2'))
-console.log(app.costoBoletos(6, 'zona2'))
-console.log(app.costoBoletos(1, 'zona3'))
-console.log(app.costoBoletos(5, 'zona3'))
+console.log('implementando costoBoleto(-)');
+console.log(app.costoBoletos(1, 1));
+console.log(app.costoBoletos(8, 1));
+console.log(app.costoBoletos(3, 2));
+console.log(app.costoBoletos(6, 2));
+console.log(app.costoBoletos(1, 3));
+console.log(app.costoBoletos(5, 3));
+console.log(app.costoBoletos(5, 4));
 
-console.log('implementando estaEnRango(-)')
+console.log('implementando estaEnRango(-)');
 console.log(app.estaEnRango(1, 100, 56));
 console.log(app.estaEnRango(20, 30, 78));
+console.log(app.estaEnRango(20, 67, -100));
