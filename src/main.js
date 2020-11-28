@@ -119,9 +119,9 @@ export default class App {
                 if(pelicula % 3 === 0){
                     resultado = ((pelicula / 3 * 60))
                 } else if(pelicula % 3 === 1) {
-                    resultado = ((pelicula / 3 * 60)) + 25 - 40
+                    resultado = ((pelicula / 3 * 60)) + 25 - 10
                 } else if(pelicula % 3 === 2) {
-                    resultado = ((pelicula / 3 * 60)) + 50 - 40
+                    resultado = ((pelicula / 3 * 60)) + 50 - 10
                 }
             break;
             case 2:
@@ -145,9 +145,9 @@ export default class App {
                 if(pelicula % 3 === 0){
                     resultado = ((pelicula / 3 * 60))
                 } else if(pelicula % 3 === 1) {
-                    resultado = ((pelicula / 3 * 60)) + 25 - 40
+                    resultado = ((pelicula / 3 * 60)) + 25 - 10
                 } else if(pelicula % 3 === 2) {
-                    resultado = ((pelicula / 3 * 60)) + 50 - 40
+                    resultado = ((pelicula / 3 * 60)) + 50 - 10
                 }
             break;
             case 6:
