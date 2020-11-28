@@ -143,41 +143,45 @@ export default class App {
             }
 
     costoBoletos(boletos, zona) {
-        let result;
-        if (1, 2, 3) {
-            if(1) {
-                result = boletos * 300 ; 
-            } else if (boletos * 300 >= 2000) {
-                result = (boletos * 300) - (boletos * 450 * 0.07);
-            }  
-    
-            if(2) {
-                result = boletos * 450; 
-            } else if (boletos * 450 >= 2000) {
-                result = (boletos * 450) - (boletos * 450 * 0.07);
-            } 
-    
-            if(3) {
-                result = boletos * 700;
-            } else if (boletos * 700 >= 2000) {
-                result = (boletos * 700) - (boletos * 700 * 0.07);
-            } else {
-                result = -1
-            }
+        let resultado;
+
+        let zona1 = boletos * 300
+        let zona2 = boletos * 450
+        let zona3 = boletos * 700
+            
+        if(zona === 1 && zona1 > 2000) {
+            resultado = zona1;
+            resultado = (resultado - (resultado * 0.07));
+        } else if (zona === 1 ) {
+            resultado = zona1; 
         }
         
-        return result;
+        if(zona === 2 && zona2 > 2000) {
+            resultado = zona2
+            resultado = (resultado - (resultado * 0.07))
+        } else if (zona === 2) {
+            resultado = zona2; 
+        }    
+
+        if(zona === 3 && zona3 > 2000) {
+            resultado = zona3;
+            resultado = (resultado - (resultado * 0.07))
+        } else if (zona === 3) {
+            resultado = zona3;
+        } else {
+            resultado = -1;
+        }
+
+        return resultado;
     }
 
     estaEnRango(limiteInicial, limiteFinal, numero) {
         let mensaje;
-
-        if (numero >= limiteInicial && numero <= limiteFinal) {
+        if (numero > limiteInicial && numero < limiteFinal) {
             mensaje = true 
         } else {
             mensaje = false
         }
-
         return mensaje;
     }
 
@@ -237,13 +241,13 @@ console.log(app.costoRenta(19, 8));
 console.log('implementando costoBoleto(-)');
 console.log(app.costoBoletos(1, 1));
 console.log(app.costoBoletos(8, 1));
-console.log(app.costoBoletos(3, 2));
+console.log(app.costoBoletos(3, 2 ));
 console.log(app.costoBoletos(6, 2));
 console.log(app.costoBoletos(1, 3));
 console.log(app.costoBoletos(5, 3));
 console.log(app.costoBoletos(5, 4));
 
-console.log('implementando estaEnRango(-)');
+console.log('implementando estaEnRango(#)');
 console.log(app.estaEnRango(1, 100, 56));
 console.log(app.estaEnRango(20, 30, 78));
 console.log(app.estaEnRango(20, 67, -100));
