@@ -116,19 +116,39 @@ export default class App {
 
         switch(dia) {
             case 1:
-                resultado = (pelicula % 3 === 0) == ((pelicula / 3 * 60) * 25) || (pelicula % 3 === 1) == ((pelicula / 3 * 60) * 25) + 25 || (pelicula % 3 === 2) == ((pelicula / 3 * 60) * 25) + 50  
+                if(pelicula % 3 === 0){
+                    resultado = ((pelicula / 3 * 60) * 25)
+                } else if(pelicula % 3 === 1) {
+                    resultado = ((pelicula / 3 * 60) * 25) + 25
+                } else if(pelicula % 3 === 2) {
+                    resultado = ((pelicula / 3 * 60) * 25) + 50 
+                }
             break;
             case 2:
-                resultado = (pelicula % 2 === 0) == (pelicula / 2 * 25) || (pelicula % 2 === 1) == (pelicula / 2 * 25) + 25
+                if (pelicula % 2 === 0) {
+                    resultado = (pelicula / 2 * 25) 
+                } else if (pelicula % 2 === 1) {
+                    resultado = (pelicula / 2 * 25) + 25
+                }
             break;
             case 3:
                 resultado = (pelicula * 25) - (pelicula * 25 * 0.15);
             break;
             case 4:
-                resultado = (pelicula % 2 === 0 * 25) || (pelicula % 2 === 1 * 25) + 25
+                if (pelicula % 2 === 0) {
+                    resultado = (pelicula / 2 * 25) 
+                } else if (pelicula % 2 === 1) {
+                    resultado = (pelicula / 2 * 25) + 25
+                }
             break;
             case 5:
-                resultado = (pelicula % 3 === 0) == ((pelicula / 3 * 60) * 25) || (pelicula % 3 === 1) == ((pelicula / 3 * 60) * 25) + 25 || (pelicula % 3 === 2) == ((pelicula / 3 * 60) * 25) + 50
+                if(pelicula % 3 === 0){
+                    resultado = ((pelicula / 3 * 60) * 25)
+                } else if(pelicula % 3 === 1) {
+                    resultado = ((pelicula / 3 * 60) * 25) + 25
+                } else if(pelicula % 3 === 2) {
+                    resultado = ((pelicula / 3 * 60) * 25) + 50 
+                }
             break;
             case 6:
                 resultado = pelicula * 25;
@@ -143,36 +163,28 @@ export default class App {
             }
 
     costoBoletos(boletos, zona) {
-        let resultado;
+        let costoTotal;
 
-        let zona1 = boletos * 300
-        let zona2 = boletos * 450
-        let zona3 = boletos * 700
+        switch(zona) {
+            case 1:
+                costoTotal = boletos * 300;
+                break;
+            case 2:
+                costoTotal = boletos * 450;
+                break;
+            case 3:
+                costoTotal = boletos * 700;
+                break;
+            default:
+                costoTotal = -1;
             
-        if(zona === 1 && zona1 > 2000) {
-            resultado = zona1;
-            resultado = (resultado - (resultado * 0.07));
-        } else if (zona === 1 ) {
-            resultado = zona1; 
-        }
-        
-        if(zona === 2 && zona2 > 2000) {
-            resultado = zona2
-            resultado = (resultado - (resultado * 0.07))
-        } else if (zona === 2) {
-            resultado = zona2; 
-        }    
-
-        if(zona === 3 && zona3 > 2000) {
-            resultado = zona3;
-            resultado = (resultado - (resultado * 0.07))
-        } else if (zona === 3) {
-            resultado = zona3;
-        } else {
-            resultado = -1;
         }
 
-        return resultado;
+        if (costoTotal > 2000) {
+            costoTotal = costoTotal * 0.93;
+        }
+
+        return costoTotal;
     }
 
     estaEnRango(limiteInicial, limiteFinal, numero) {
