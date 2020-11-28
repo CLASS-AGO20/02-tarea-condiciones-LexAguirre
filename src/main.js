@@ -121,7 +121,7 @@ export default class App {
                 } else if(pelicula % 3 === 1) {
                     resultado = ((pelicula / 3 * 60)) + ((numero%3)*25)
                 } else if(pelicula % 3 === 2) {
-                    resultado = ((pelicula / 3 * 60)) + ((numero%3)*50)
+                    resultado = ((pelicula / 3 * 60)) + ((numero % 3) * 50)
                 }
             break;
             case 2:
