@@ -117,18 +117,18 @@ export default class App {
         switch(dia) {
             case 1:
                 if(pelicula % 3 === 0){
-                    resultado = ((pelicula / 3 * 60) * 25)
+                    resultado = ((pelicula / 3 * 60))
                 } else if(pelicula % 3 === 1) {
-                    resultado = ((pelicula / 3 * 60) * 25) + 25
+                    resultado = ((pelicula / 3 * 60)) + 25
                 } else if(pelicula % 3 === 2) {
-                    resultado = ((pelicula / 3 * 60) * 25) + 50 
+                    resultado = ((pelicula / 3 * 60)) + 50 
                 }
             break;
             case 2:
                 if (pelicula % 2 === 0) {
                     resultado = (pelicula / 2 * 25) 
                 } else if (pelicula % 2 === 1) {
-                    resultado = (pelicula / 2 * 25) + 25
+                    resultado = (pelicula / 2 * 25) + 25 - 12.5 
                 }
             break;
             case 3:
@@ -138,16 +138,16 @@ export default class App {
                 if (pelicula % 2 === 0) {
                     resultado = (pelicula / 2 * 25) 
                 } else if (pelicula % 2 === 1) {
-                    resultado = (pelicula / 2 * 25) + 25
+                    resultado = (pelicula / 2 * 25) + 25 - 12.5
                 }
             break;
             case 5:
                 if(pelicula % 3 === 0){
-                    resultado = ((pelicula / 3 * 60) * 25)
+                    resultado = ((pelicula / 3 * 60))
                 } else if(pelicula % 3 === 1) {
-                    resultado = ((pelicula / 3 * 60) * 25) + 25
+                    resultado = ((pelicula / 3 * 60)) + 25
                 } else if(pelicula % 3 === 2) {
-                    resultado = ((pelicula / 3 * 60) * 25) + 50 
+                    resultado = ((pelicula / 3 * 60)) + 50 
                 }
             break;
             case 6:
